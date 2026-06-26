@@ -163,6 +163,16 @@ with tab3:
         except Exception as e:
             st.error(f"Error loading file: {e}")
 
+import os
+
+with st.expander("📖 Full README", expanded=False):
+    try:
+        with open("README.md", "r", encoding="utf-8") as f:
+            readme_content = f.read()
+        st.markdown(readme_content)
+    except:
+        st.info("README.md loaded from GitHub")
+
 # -------------------------- Footer --------------------------
 st.divider()
 st.markdown("""
